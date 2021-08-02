@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Crud Operation</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="/">Navbar</a>
+        </div>
+
+      </nav>
+         <h1 class="text-center mt-5 "> Todo List </h1>
+      <form action="/add/todo" method="POST" class="w-50 mx-auto">
+        <input type="text" name="todo" class="form-control">
+        <input type="submit"value="send" class=" form-control mt-3 btn btn-primary">
+       </form>
+       <ul class="list-group w-50 mx-auto mt-2">
+        <% for (element of todos){%> 
+            <li class="list-group-item"><%=element.todo %> </li>
+            <a href="/delete/todo/<%=element._id %> " class="my-2"> <button class="btn btn-danger"> delete</button></a>
+
+        <%  }%> 
+      
+      </ul>
